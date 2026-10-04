@@ -1,1 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>THZCAN | Portafolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(0,255,255,.15),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(255,90,0,.15),
+          transparent 30%
+        ),
+        #07090d;
+
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(10, 14, 20, .9);
+      border: 1px solid rgba(0,255,255,.35);
+      border-radius: 25px;
+      padding: 45px;
+
+      box-shadow:
+        0 0 30px rgba(0,255,255,.1),
+        0 0 30px rgba(255,90,0,.08);
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    /* FOTO */
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+
+      object-fit: cover;
+      border-radius: 50%;
+
+      border: 3px solid #00ffff;
+
+      box-shadow:
+        0 0 15px #00ffff,
+        0 0 35px rgba(255,90,0,.5);
+
+      background: #111;
+
+      animation: salto 3s ease-in-out infinite;
+    }
+
+    @keyframes salto {
+
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+    }
+
+    .avatar:hover {
+
+      box-shadow:
+        0 0 20px #00ffff,
+        0 0 45px #00ffff,
+        0 0 60px rgba(255,90,0,.7);
+
+    }
+
+    /* TITULO */
+
+    h1 {
+      margin-top: 20px;
+
+      font-size: 55px;
+      letter-spacing: 4px;
+
+      color: #00ffff;
+
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 25px #00ffff;
+    }
+
+    .subtitle {
+
+      margin-top: 8px;
+
+      font-size: 18px;
+
+      color: #ff6500;
+
+      text-shadow:
+        0 0 10px #ff6500;
+    }
+
+    /* BOTONES */
+
+    .buttons {
+
+      margin-top: 25px;
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+    }
+
+    .button {
+
+      padding: 12px 22px;
+
+      border-radius: 12px;
+
+      text-decoration: none;
+
+      color: white;
+
+      border: 1px solid #00ffff;
+
+      box-shadow:
+        0 0 12px rgba(0,255,255,.25);
+
+      transition: .2s;
+    }
+
+    .button:hover {
+
+      transform: translateY(-3px);
+
+      background:
+        rgba(0,255,255,.1);
+
+      box-shadow:
+        0 0 25px rgba(0,255,255,.6);
+    }
+
+    .orange {
+
+      border-color: #ff6500;
+
+      box-shadow:
+        0 0 12px rgba(255,101,0,.25);
+    }
+
+    .orange:hover {
+
+      background:
+        rgba(255,101,0,.1);
+
+      box-shadow:
+        0 0 25px rgba(255,101,0,.6);
+    }
+
+    /* SECCIONES */
+
+    section {
+
+      margin-top: 55px;
+    }
+
+    h2 {
+
+      color: #00ffff;
+
+      margin-bottom: 15px;
+
+      text-shadow:
+        0 0 10px #00ffff;
+    }
+
+    p {
+
+      color: #cbd3da;
+
+      line-height: 1.7;
+    }
+
+    /* TARJETAS */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
+
+      margin-top: 20px;
+    }
+
+    .item {
+
+      padding: 20px;
+
+      border-radius: 15px;
+
+      background:
+        rgba(255,255,255,.03);
+
+      border:
+        1px solid rgba(255,101,0,.25);
+
+      transition: .2s;
+    }
+
+    .item:hover {
+
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 0 25px rgba(255,101,0,.5);
+    }
+
+    .item strong {
+
+      display: block;
+
+      color: #ff6500;
+
+      margin-bottom: 8px;
+
+      text-shadow:
+        0 0 8px #ff6500;
+    }
+
+    /* PIE */
+
+    footer {
+
+      margin-top: 40px;
+
+      text-align: center;
+
+      color: #68717a;
+
+      font-size: 13px;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 650px) {
+
+      .card {
+
+        padding:
+          25px 18px;
+      }
+
+      h1 {
+
+        font-size:
+          40px;
+      }
+
+      .grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <!-- PERFIL -->
+
+      <div class="profile">
+
+        <img
+          class="avatar"
+          src="Sans_titre5.png"
+          alt="Foto de perfil"
+        >
+
+        <h1>
+          THZCAN
+        </h1>
+
+        <div class="subtitle">
+          Discord • Minecraft • Staff
+        </div>
+
+        <!-- BOTONES -->
+
+        <div class="buttons">
+
+          <a
+            class="button"
+            href="#proyectos"
+          >
+            Proyectos
+          </a>
+
+          <a
+            class="button orange"
+            href="#informacion"
+          >
+            Información
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SOBRE MI -->
+
+      <section>
+
+        <h2>
+          Sobre mí
+        </h2>
+
+        <p>
+
+          ¡Hola! Soy thzcan.
+
+          Soy inversionista en proyectos que aún siguen
+          en crecimiento.
+
+          ¡Soy organizador del equipo Staff!
+
+          Soy Developer Aprendiz y mi nombre real es Alexander.
+
+        </p>
+
+      </section>
+
+
+      <!-- LO QUE HAGO -->
+
+      <section>
+
+        <h2>
+          Lo que hago
+        </h2>
+
+        <div class="grid">
+
+
+          <div class="item">
+
+            <strong>
+              Discord
+            </strong>
+
+            Configuración, organización y
+            organizador de todo Discord.
+
+          </div>
+
+
+          <div class="item">
+
+            <strong>
+              Minecraft
+            </strong>
+
+            Developer Aprendiz y actualmente
+            soy Fundador.
+
+          </div>
+
+
+          <div class="item">
+
+            <strong>
+              Staff
+            </strong>
+
+            Moderación, soporte y atención
+            a los usuarios.
+
+            Organizador del Staff.
+
+          </div>
+
+
+          <div class="item">
+
+            <strong>
+              Proyectos
+            </strong>
+
+            StarnyxMC.
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+      <!-- EXPERIENCIA -->
+
+      <section>
+
+        <h2>
+          Experiencia
+        </h2>
+
+        <p>
+
+          Tengo conocimientos básicos sobre
+          el desarrollo y configuración de Networks.
+
+        </p>
+
+      </section>
+
+
+      <!-- PROYECTOS -->
+
+      <section id="proyectos">
+
+        <h2>
+          Proyectos
+        </h2>
+
+
+        <div class="item">
+
+          <strong>
+            🟠 Proyecto en proceso
+          </strong>
+
+          <p>
+
+            StarnyxMC es un proyecto de Minecraft
+            actualmente en desarrollo.
+
+            Próximamente se añadirá más información
+            sobre el proyecto.
+
+          </p>
+
+        </div>
+
+
+      </section>
+
+
+      <!-- INFORMACION -->
+
+      <section id="informacion">
+
+        <h2>
+          Información
+        </h2>
+
+        <p>
+
+          Discord:
+          ztezcan.
+
+        </p>
+
+        <p>
+
+          Developer Aprendiz •
+          Fundador •
+          Organizador Staff
+
+        </p>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <footer>
+
+        © 2026 THZCAN — Portafolio
+
+      </footer>
+
+
+    </div>
+
+  </div>
+
+</body>
+</html>
